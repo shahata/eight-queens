@@ -33,6 +33,7 @@ function next(board) {
 function queens() {
   let board = new Array(N).fill(0);
   let count = 0;
+  console.time('queens');
   do {
     if (valid(board)) {
       console.log(++count);
@@ -40,6 +41,7 @@ function queens() {
     }
     board = next(board);
   } while (board);
+  console.timeEnd('queens');
 }
 
 queens();
