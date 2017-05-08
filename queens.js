@@ -31,16 +31,16 @@ function next(board) {
 }
 
 function queens() {
+  console.time('queens');
   let board = new Array(N).fill(0);
   let count = 0;
-  console.time('queens');
-  do {
+  while (board) {
     if (valid(board)) {
       console.log(++count);
       console.log(print(board), '\n');
     }
     board = next(board);
-  } while (board);
+  }
   console.timeEnd('queens');
 }
 
